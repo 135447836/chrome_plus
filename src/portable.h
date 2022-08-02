@@ -105,7 +105,7 @@ std::wstring GetCommand(LPWSTR param)
             args.push_back(L"--disable-breakpad");
             args.push_back(L"--no-default-browser-check");
             args.push_back(L"--whitelisted-extension=mjidkpedjlfnanainpdfnedkdlacidla");
-            args.push_back(L"--whitelisted-extension=bgjfekefhjemchdeigphccilhncnjldn");
+            // args.push_back(L"--whitelisted-extension=bgjfekefhjemchdeigphccilhncnjldn");
 
             // args.push_back(L"--force-local-ntp");
             // args.push_back(L"--disable-background-networking");
