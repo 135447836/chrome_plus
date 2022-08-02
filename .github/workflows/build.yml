@@ -2,9 +2,9 @@ name: build
 
 on:
   push:
-    branches: [ main ]
+    branches: [ add-some-args ]
   pull_request:
-    branches: [ main ]
+    branches: [ add-some-args ]
 
 jobs:
   build:
