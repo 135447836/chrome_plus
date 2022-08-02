@@ -100,6 +100,7 @@ std::wstring GetCommand(LPWSTR param)
             // args.push_back(L"--force-local-ntp");
             // args.push_back(L"--disable-background-networking");
             
+            args.push_back(L"--disk-cache-dir=Z:\Cache");
             args.push_back(L"--no-default-browser-check");
             args.push_back(L"--disable-logging");
             args.push_back(L"--disable-crash-reporter");
@@ -108,17 +109,16 @@ std::wstring GetCommand(LPWSTR param)
             args.push_back(L"--whitelisted-extension=mjidkpedjlfnanainpdfnedkdla");
             args.push_back(L"--whitelisted-extension=bgjfekefhjemchdeigphccilhncnjldn");
 
-
             args.push_back(L"--disable-features=RendererCodeIntegrity,FlashDeprecationWarning");
 
             //if (IsNeedPortable())
-            {
-                auto diskcache = GetDiskCacheDir();
+            //{
+            //    auto diskcache = GetDiskCacheDir();
 
-                wchar_t temp[MAX_PATH];
-                wsprintf(temp, L"--disk-cache-dir=%s", diskcache.c_str());
-                args.push_back(temp);
-            }
+            //    wchar_t temp[MAX_PATH];
+            //    wsprintf(temp, L"--disk-cache-dir=%s", diskcache.c_str());
+            //    args.push_back(temp);
+            //}
             {
                 auto userdata = GetUserDataDir();
 
