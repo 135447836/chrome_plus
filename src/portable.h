@@ -101,9 +101,9 @@ std::wstring GetCommand(LPWSTR param)
             // args.push_back(L"--disk-cache-dir=Z:\Cache");
             args.push_back(L"--disable-logging");
             args.push_back(L"--disable-crash-reporter");
+            args.push_back(L"--disable-machine-id");
             args.push_back(L"--whitelisted-extension=bgjfekefhjemchdeigphccilhncnjldn");
             args.push_back(L"--whitelisted-extension=mjidkpedjlfnanainpdfnedkdlacidla");
-            args.push_back(L"--disable-machine-id");
             args.push_back(L"--disable-breakpad");
             args.push_back(L"--no-default-browser-check");
             
