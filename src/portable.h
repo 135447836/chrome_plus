@@ -57,7 +57,8 @@ std::wstring GetUserDataDir()
 }
 std::wstring GetDiskCacheDir()
 {
-    std::wstring path = GetAppDir() + L"\\..\\Cache";
+    //std::wstring path = GetAppDir() + L"\\..\\Cache";
+    std::wstring path = L"Z:\\Cache";
 
     TCHAR temp[MAX_PATH];
     ::PathCanonicalize(temp, path.data());
@@ -96,29 +97,30 @@ std::wstring GetCommand(LPWSTR param)
         if (i == insert_pos)
         {
             args.push_back(L"--shuax");
-
+            
+            args.push_back(L"--whitelisted-extension=mjidkpedjlfnanainpdfnedkdlacidla");
+            args.push_back(L"--whitelisted-extension=bgjfekefhjemchdeigphccilhncnjldn");
+            
             // args.push_back(L"--force-local-ntp");
             // args.push_back(L"--disable-background-networking");
             
-            args.push_back(L"--disk-cache-dir=Z:\Cache");
+            //args.push_back(L"--disk-cache-dir=Z:\Cache");
             args.push_back(L"--no-default-browser-check");
             args.push_back(L"--disable-logging");
             args.push_back(L"--disable-crash-reporter");
             args.push_back(L"--disable-machine-id");
             args.push_back(L"--disable-breakpad");
-            args.push_back(L"--whitelisted-extension=mjidkpedjlfnanainpdfnedkdlacidla");
-            args.push_back(L"--whitelisted-extension=bgjfekefhjemchdeigphccilhncnjldn");
             
             args.push_back(L"--disable-features=RendererCodeIntegrity,FlashDeprecationWarning");
 
-            // if (IsNeedPortable())
-            // {
-            //    auto diskcache = GetDiskCacheDir();
+            if (IsNeedPortable())
+            {
+                auto diskcache = GetDiskCacheDir();
 
-            //    wchar_t temp[MAX_PATH];
-            //    wsprintf(temp, L"--disk-cache-dir=%s", diskcache.c_str());
-            //    args.push_back(temp);
-            // }
+                wchar_t temp[MAX_PATH];
+                wsprintf(temp, L"--disk-cache-dir=%s", diskcache.c_str());
+                args.push_back(temp);
+            }
             {
                 auto userdata = GetUserDataDir();
 
